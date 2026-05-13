@@ -70,7 +70,7 @@ The test was conducted following the **Penetration Testing Execution Standard (P
 - **Vulnerability Research** : Mapping detected software to known CVEs
 - **Exploit Development & Execution** : Using Metasploit to exploit CVE-2011-2523
 - **Web Application Assessment** : Misconfiguration testing with Nmap and Nikto
-- **File Share Enumeration** — SMB share and NFS export discovery via Nmap NSE
+- **File Share Enumeration** : SMB share and NFS export discovery via Nmap NSE
 - **Post-Exploitation Analysis** : Evaluating attacker impact at root privilege level
 - **Risk-Based Reporting** : Categorising findings by severity with remediation guidance
 - **Ethical & Scoped Testing** : Maintaining defined boundaries throughout the engagement
@@ -83,13 +83,13 @@ The test was conducted following the **Penetration Testing Execution Standard (P
 
 **Goal:** Map the target's attack surface before attempting any exploitation.
 
-The first step was confirming the attacker machine's own IP address to avoid scanning the wrong host — a basic but critical step in any engagement.
+The first step was confirming the attacker machine's own IP address to avoid scanning the wrong host, a basic but critical step in any engagement.
 
 ```bash
 ip a
 ```
 
-*Figure 1 — Identifying the attacker's IP address*
+*Figure 1 : Identifying the attacker's IP address*
 
 Host discovery was then performed to confirm the target was live on the network.
 
@@ -115,11 +115,11 @@ nmap -sS -p- 192.168.x.x
 | 139, 445 | SMB (Samba) |
 | 111, 2049 | RPC / NFS |
 
-> 📸 *Figure 3 — Full TCP port scan results*
+*Figure 3  Full TCP port scan results*
 
 
 
-### Phase 2 — Vulnerability Analysis
+### Phase 2 Vulnerability Analysis
 
 **Goal:** Identify exploitable weaknesses in the discovered services.
 
