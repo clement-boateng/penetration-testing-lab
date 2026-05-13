@@ -10,11 +10,10 @@ A structured penetration test simulating a real-world ethical hacking engagement
 2. [Environment & Tools](#environment--tools)
 3. [Technical Skills Demonstrated](#technical-skills-demonstrated)
 4. [Implementation Process](#implementation-process)
-   - [Phase 1 — Reconnaissance](#phase-1--reconnaissance)
-   - [Phase 2 — Vulnerability Analysis](#phase-2--vulnerability-analysis)
-   - [Phase 3 — Exploitation](#phase-3--exploitation)
-   - [Phase 4 — Post-Exploitation](#phase-4--post-exploitation)
-   - [Phase 5 — Mitigation](#phase-5--mitigation)
+   - [Phase 1 : Reconnaissance](#phase-1--reconnaissance)
+   - [Phase 2 : Vulnerability Analysis](#phase-2--vulnerability-analysis)
+   - [Phase 3 : Exploitation](#phase-3--exploitation)
+   - [Phase 4 : Post-Exploitation](#phase-4--post-exploitation)
 5. [Visual Evidence](#visual-evidence)
 6. [Results & Key Findings](#results--key-findings)
 7. [Installation & Setup](#installation--setup)
@@ -236,7 +235,7 @@ showmount -e 192.168.x.x
 
 **Outcome:** Confirmed anonymous read/write access on SMB shares and unrestricted NFS export. No data was read or altered during testing.
 
----
+
 
 ### Phase 4 : Post-Exploitation
 
@@ -251,12 +250,6 @@ With root shell access obtained via vsftpd, the attacker's position was assessed
 No persistence mechanisms were deployed. No files were read, modified, or deleted. The post-exploitation phase was deliberately limited to analysis only, in line with the defined scope and ethical testing principles.
 
 
-
-### Phase 5 — Mitigation
-
-Full remediation recommendations are covered in [Results & Key Findings](#results--key-findings).
-
----
 
 ## Visual Evidence
 
@@ -283,7 +276,7 @@ screenshots/
 └── figure-19-nfs-export.png
 ```
 
----
+
 
 ## Results & Key Findings
 
@@ -291,9 +284,9 @@ screenshots/
 
 | Severity | Vulnerability | Impact |
 |---|---|---|
-| 🔴 **Critical** | vsftpd 2.3.4 — CVE-2011-2523 backdoor | Unauthenticated remote root shell access |
-| 🟠 **High** | Apache 2.2.22 — EOL, TRACE enabled, headers missing | Information disclosure, web-based attack surface |
-| 🟡 **Medium** | Exposed SMB & NFS with anonymous access | Unauthorised share enumeration and file exposure |
+| **Critical** | vsftpd 2.3.4 — CVE-2011-2523 backdoor | Unauthenticated remote root shell access |
+| **High** | Apache 2.2.22 — EOL, TRACE enabled, headers missing | Information disclosure, web-based attack surface |
+| **Medium** | Exposed SMB & NFS with anonymous access | Unauthorised share enumeration and file exposure |
 
 ### Remediation Table
 
@@ -308,7 +301,7 @@ screenshots/
 | NFS wildcard export | Medium | Replace `*` with specific trusted IP ranges in `/etc/exports` |
 | Unnecessary open ports | Medium | Audit and close all ports not required for core functionality |
 
----
+
 
 ## Installation & Setup
 
@@ -327,9 +320,9 @@ To replicate this lab environment:
 3. Confirm connectivity with `ping <target-ip>`
 4. Run the commands documented in each phase section above
 
-> ⚠️ **Legal Notice:** Only perform penetration testing against systems you own or have explicit written permission to test. Unauthorised access is a criminal offence under the Computer Misuse Act 1990 (UK) and equivalent legislation worldwide.
+**Legal Notice:** Only perform penetration testing against systems you own or have explicit written permission to test. Unauthorised access is a criminal offence under the Computer Misuse Act 1990 (UK) and equivalent legislation worldwide.
 
----
+
 
 ## Challenges & Lessons Learned
 
@@ -345,7 +338,7 @@ During vulnerability scanning, not every flagged issue is exploitable. Manually 
 
 Translating technical findings (e.g. "TRACE method enabled") into business-level impact (e.g. "an attacker could steal authenticated session credentials via a cross-site tracing attack") is a skill that takes deliberate practice. This project reinforced the importance of writing findings that are useful to both engineers and decision-makers.
 
----
+
 
 ## Conclusion & Future Work
 
