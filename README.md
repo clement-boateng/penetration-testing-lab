@@ -2,7 +2,7 @@
 
 A structured penetration test simulating a real-world ethical hacking engagement against a vulnerable Linux target in a segmented network environment. Conducted using industry-standard methodology (PTES) with tools including Nmap, Metasploit, and Nikto.
 
----
+
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ A structured penetration test simulating a real-world ethical hacking engagement
 9. [Conclusion & Future Work](#conclusion--future-work)
 10. [Contact](#contact)
 
----
+
 
 ## Introduction and Overview
 
@@ -61,7 +61,7 @@ The test was conducted following the **Penetration Testing Execution Standard (P
 | **Nikto** | Web server vulnerability scanning and misconfiguration detection |
 
 
----
+
 
 ## Technical Skills Demonstrated
 
