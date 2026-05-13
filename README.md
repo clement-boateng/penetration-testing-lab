@@ -10,7 +10,7 @@ A structured penetration test simulating a real-world ethical hacking engagement
 2. [Environment & Tools](#environment--tools)
 3. [Technical Skills Demonstrated](#technical-skills-demonstrated)
 4. [Implementation Process](#implementation-process)
-   [Phase 1 : Reconnaissance](#phase-1--reconnaissance)  |   [Phase 2 : Vulnerability Analysis](#phase-2--vulnerability-analysis)  |   [Phase 3 : Exploitation](#phase-3--exploitation)  |  [Phase 4 : Post-Exploitation](#phase-4--post-exploitation)
+   -[Phase 1 : Reconnaissance](#phase-1--reconnaissance)  |   [Phase 2 : Vulnerability Analysis](#phase-2--vulnerability-analysis)  |   [Phase 3 : Exploitation](#phase-3--exploitation)  |  [Phase 4 : Post-Exploitation](#phase-4--post-exploitation)
 5. [Visual Evidence](#visual-evidence)
 6. [Results & Key Findings](#results--key-findings)
 7. [Installation & Setup](#installation--setup)
