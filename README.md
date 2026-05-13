@@ -97,7 +97,7 @@ Host discovery was then performed to confirm the target was live on the network.
 nmap -sn 192.168.x.0/24
 ```
 
-*Figure 2 — Host discovery confirming target is online*
+*Figure 2 Host discovery confirming target is online*
 
 A full TCP SYN scan was run across all 65,535 ports to identify every open service on the target.
 
@@ -133,7 +133,7 @@ nmap -sV 192.168.x.x
 
 Three significant vulnerabilities were identified:
 
----
+
 
 #### vsftpd 2.3.4 — CVE-2011-2523 (Critical)
 
@@ -165,9 +165,9 @@ nmap --script http-methods,http-trace -p 80 192.168.x.x
 nikto -h http://192.168.x.x
 ```
 
-> *Figure 6 — Nmap version detection showing Apache 2.2.22*  
-> *Figure 14 — Nmap HTTP scripts showing TRACE enabled and exposed directories*  
-> *Figure 15 — Nikto scan confirming EOL status and web misconfigurations*
+*Figure 6  Nmap version detection showing Apache 2.2.22*  
+*Figure 14  Nmap HTTP scripts showing TRACE enabled and exposed directories*  
+*Figure 15  Nikto scan confirming EOL status and web misconfigurations*
 
 
 
@@ -184,11 +184,11 @@ Findings included:
 - SMB shares (`IPC$`, `print$`, `public`) enumerable with **anonymous access**
 - NFS `/files` directory exported to **all hosts** (`*`) with no access control
 
-> *Figure 16 — SMB enumeration showing anonymously accessible shares*  
-> *Figure 17 — SMB OS discovery revealing system information*  
-> *Figure 18/19 — NFS showmount confirming unrestricted /files export*
+*Figure 16  SMB enumeration showing anonymously accessible shares*  
+*Figure 17  SMB OS discovery revealing system information*  
+*Figure 18/19  NFS showmount confirming unrestricted /files export*
 
----
+
 
 ### Phase 3  Exploitation
 
