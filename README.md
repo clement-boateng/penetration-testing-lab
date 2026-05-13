@@ -131,7 +131,7 @@ Three significant vulnerabilities were identified:
 
 
 
-#### vsftpd 2.3.4 — CVE-2011-2523 (Critical)
+#### vsftpd 2.3.4  CVE-2011-2523 (Critical)
 
 The FTP service on port 21 was running **vsftpd version 2.3.4**, a version known to contain a deliberately planted backdoor. This backdoor allows an attacker to trigger a root shell without any authentication by sending a specific sequence during login.
 
