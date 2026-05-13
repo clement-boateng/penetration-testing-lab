@@ -281,8 +281,8 @@ screenshots/
 
 | Severity | Vulnerability | Impact |
 |---|---|---|
-| **Critical** | vsftpd 2.3.4 — CVE-2011-2523 backdoor | Unauthenticated remote root shell access |
-| **High** | Apache 2.2.22 — EOL, TRACE enabled, headers missing | Information disclosure, web-based attack surface |
+| **Critical** | vsftpd 2.3.4  CVE-2011-2523 backdoor | Unauthenticated remote root shell access |
+| **High** | Apache 2.2.22  EOL, TRACE enabled, headers missing | Information disclosure, web-based attack surface |
 | **Medium** | Exposed SMB & NFS with anonymous access | Unauthorised share enumeration and file exposure |
 
 ### Remediation Table
