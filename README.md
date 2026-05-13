@@ -6,8 +6,8 @@ A structured penetration test simulating a real-world ethical hacking engagement
 
 ## Table of Contents
 
-1. [Introduction & Overview](#introduction--overview)
-2. [Environment & Tools](#environment--tools)
+1. [Introduction and Overview](#introduction--overview)
+2. [Environment and Tools](#environment--tools)
 3. [Technical Skills Demonstrated](#technical-skills-demonstrated)
 4. [Implementation Process](#implementation-process)
    - [Phase 1 : Reconnaissance](#phase-1--reconnaissance)  |   [Phase 2 : Vulnerability Analysis](#phase-2--vulnerability-analysis)  |   [Phase 3 : Exploitation](#phase-3--exploitation)  |  [Phase 4 : Post-Exploitation](#phase-4--post-exploitation)
@@ -39,7 +39,7 @@ The target was a Linux server hosted in the organisation's **DMZ (Demilitarised 
 The test was conducted following the **Penetration Testing Execution Standard (PTES)**, an industry-recognised framework covering seven structured phases from pre-engagement through to reporting.
 
 
-## Environment & Tools
+## Environment and Tools
 
 | Category | Details |
 |---|---|
@@ -275,7 +275,7 @@ screenshots/
 
 
 
-## Results & Key Findings
+## Results and Key Findings
 
 ### Summary of Findings
 
@@ -300,7 +300,7 @@ screenshots/
 
 
 
-## Installation & Setup
+## Installation and Setup
 
 To replicate this lab environment:
 
@@ -321,7 +321,7 @@ To replicate this lab environment:
 
 
 
-## Challenges & Lessons Learned
+## Challenges and Lessons Learned
 
 ### Knowing when to stop
 
@@ -337,7 +337,7 @@ Translating technical findings (e.g. "TRACE method enabled") into business-level
 
 
 
-## Conclusion & Future Work
+## Conclusion and Future Work
 
 This project demonstrated the full penetration testing lifecycle — from reconnaissance through to risk-ranked reporting — against a purposefully vulnerable target. Three vulnerabilities were identified across FTP, HTTP, and file-sharing services, one of which was confirmed exploitable to root access via Metasploit.
 
