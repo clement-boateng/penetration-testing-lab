@@ -1,4 +1,4 @@
-# Penetration Testing Lab — Metasploitable 2 Environment
+# Penetration Testing Lab, Metasploitable 2 Environment
 
 A structured penetration test simulating a real-world ethical hacking engagement against a vulnerable Linux target in a segmented network environment. Conducted using industry-standard methodology (PTES) with tools including Nmap, Metasploit, and Nikto.
 
