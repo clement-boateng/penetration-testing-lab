@@ -39,7 +39,7 @@ The target was a Linux server hosted in the organisation's **DMZ (Demilitarised 
 - Assess the potential impact of a successful attack (privilege level, data exposure)
 - Deliver actionable remediation recommendations prioritised by severity
 
-The test was conducted following the **Penetration Testing Execution Standard (PTES)** — an industry-recognised framework covering seven structured phases from pre-engagement through to reporting.
+The test was conducted following the **Penetration Testing Execution Standard (PTES)**, an industry-recognised framework covering seven structured phases from pre-engagement through to reporting.
 
 
 ## Environment & Tools
