@@ -27,7 +27,7 @@ A structured penetration test simulating a real-world ethical hacking engagement
 
 ### Background
 
-This project simulates a penetration test commissioned by a fictional human rights organisation that had observed unusual activity across its network — unexpected traffic spikes during off-hours, failed login attempts on its email server, and unauthorised permission changes. The organisation required a controlled assessment to identify exploitable weaknesses before a real attacker could take advantage of them.
+This project simulates a penetration test against a segmented network environment modelled on a real-world scenario. The  organisation that had observed unusual activity across its network, unexpected traffic spikes during off-hours, failed login attempts on its email server, and unauthorised permission changes. The organisation required a controlled assessment to identify exploitable weaknesses before a real attacker could take advantage of them
 
 The target was a Linux server hosted in the organisation's **DMZ (Demilitarised Zone)** — the network segment exposed to external traffic while sitting behind the core internal network. This is a common and high-value target in real-world engagements.
 
