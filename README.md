@@ -196,6 +196,7 @@ run
 
 
 *Figure 11 : Verification of exploit parameters before execution*
+
 ![Fig 12](screenshots/Fig_12_Successful_exploitation_of_the_vsftpd_2.3.4_vulnerability.png)
 
 *Figure 12 : Successful exploitation: root shell obtained*
@@ -316,4 +317,4 @@ This project demonstrated the full penetration testing lifecycle, from reconnais
 
 ---
 
-*This project was conducted in a controlled lab environment for educational purposes. All testing was performed against systems I own and operate. No real-world systems were accessed.*
+*This project was conducted in a controlled lab environment.*
