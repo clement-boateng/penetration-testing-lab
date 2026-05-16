@@ -229,15 +229,19 @@ No files were read, modified, or deleted during this phase. No persistence mecha
 ### Remediation Table
 
 | Vulnerability | Risk | Action Required |
-|---|---|---|
-| vsftpd 2.3.4 backdoor | Critical | Remove or replace FTP service; use SFTP (port 22) instead |
-| Apache 2.2.22 EOL | High | Upgrade to a supported Apache version (2.4.x) |
-| TRACE method enabled | High | Disable via `TraceEnable Off` in Apache config |
-| Directory indexing | High | Disable with `Options -Indexes` in Apache config |
-| Missing security headers | Medium–High | Add `X-Frame-Options`, `Content-Security-Policy`, `X-Content-Type-Options` |
-| SMB anonymous access | Medium | Disable anonymous access; restrict SMB to internal trusted hosts only |
-| NFS wildcard export | Medium | Replace `*` with specific trusted IP ranges in `/etc/exports` |
-| Unnecessary open ports | Medium | Audit and close all ports not required for core functionality |
+
+### Remediation Table
+
+| Vulnerability | Risk | Action Required |
+| :--- | :--- | :--- |
+| **vsftpd 2.3.4 backdoor** | Critical | Immediately decommission the service; replace with secure file transfer protocols such as SFTP (Port 22). |
+| **Apache 2.2.22 EOL** | High | Upgrade to the latest stable, supported version of Apache (2.4.x or higher) to patch known CVEs. |
+| **SMB anonymous access** | Medium | Disable anonymous guest access (e.g., set `map to guest = Never` in Samba); restrict SMB traffic to internal, trusted network segments. |
+| **NFS wildcard export** | Medium | Restrict the NFS shares by replacing the `*` wildcard with specific, authorized IP addresses or subnets in `/etc/exports`. |
+| **Missing security headers** | Medium | Implement missing defense-in-depth headers (`X-Frame-Options`, `X-Content-Type-Options`, `Content-Security-Policy`, `Strict-Transport-Security`) via Apache configuration. |
+| **TRACE method enabled** | Low–Medium | Append or modify the directive `TraceEnable Off` in the global Apache configuration file to mitigate XST risks. |
+| **Directory indexing** | Low–Medium | Disable directory browsing globally or for specific directories by removing `Indexes` or explicitly setting `Options -Indexes` in Apache. |
+| **Unnecessary open ports** | Low–Medium | Conduct a port audit and implement strict firewall rules (iptables/UFW) to block inbound traffic on all non-essential ports. |
 
 
 
