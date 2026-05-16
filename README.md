@@ -6,7 +6,7 @@ A structured penetration test simulating a real-world ethical hacking engagement
 
 ## Table of Contents
 
-1. [Introduction and Overview](#introduction--overview)
+1. [Introduction](#introduction--overview)
 2. [Environment and Tools](#environment--tools)
 3. [Technical Skills Demonstrated](#technical-skills-demonstrated)
 4. [Implementation Process](#implementation-process)
@@ -15,8 +15,7 @@ A structured penetration test simulating a real-world ethical hacking engagement
 6. [Results and Key Findings](#results--key-findings)
 7. [Installation and Setup](#installation--setup)
 8. [Challenges and Lessons Learned](#challenges--lessons-learned)
-9. [Conclusion and Future Work](#conclusion--future-work)
-10. [Contact](#contact)
+9. [Conclusion](#conclusion--future-work)
 
 
 
