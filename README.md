@@ -82,7 +82,7 @@ The first step was confirming the attacker machine's own IP address to avoid sca
 ```bash
 ip a
 ```
-![Fig 1](screenshots/Fig_1_Identifying_the_attacker%27s_IP_address.png)
+![Fig 1](screenshots/Fig_1_Identifying_the_attackers_IP_address.png)
 
 *Figure 1 : Identifying the attacker's IP address*
 
