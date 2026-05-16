@@ -105,6 +105,7 @@ nmap -sS -p- 10.1.161.19
 **Result:** 13 open TCP ports were discovered, including:
 
 ![Fig 3](screenshots/Fig_3_Full_TCP_port scan_results.png)
+
 *Figure 3  Full TCP port scan results*
 
 
@@ -120,6 +121,7 @@ nmap -sV -p 21,22, 80, 111, 139, 445, 445, 2049 , 3632 , 35890, 39125, 42774, 47
 ```
 
 ![Fig 4](screenshots/Fig_4_Service_and_version_detection_output.png)
+
 *Figure 4 Service and version detection output*
 
 Three significant vulnerabilities were identified:
@@ -137,6 +139,7 @@ nmap -- script vuln 10.1.161.19
 ```
 
 ![Fig 5](screenshots/Fig_5_Nmap_confirming_the_vsftpd_2.3.4_backdoor.png)
+
 *Figure 5 Nmap confirming the vsftpd 2.3.4 backdoor*
 
 **Why it matters:** No credentials are required. A successful exploit gives root-level shell access, the highest privilege level on a Linux system.
@@ -148,6 +151,7 @@ nmap -- script vuln 10.1.161.19
 The web server on port 80 was running **Apache 2.2.22**  a version that reached end-of-life in December 2017 and no longer receives security patches. Additional misconfigurations were identified:
 
 ![Fig 6](screenshots/Fig_6_Nmap_version_detection_showing_Apache_2.2.22.png)
+
 *Figure 6  Nmap version detection showing Apache 2.2.22*  
 
 
@@ -173,16 +177,22 @@ run
 ```
 
 ![Fig 7](screenshots/Fig_7_Metasploit_Framework_launched.jpg)
+
 *Figure 7 : Metasploit launched* 
 ![Fig 8](screenshots/Fig_8_Metasploit_search_showing_the_vsftpd_234_backdoor_exploit_module.png)
+
 *Figure 8 : Metasploit search showing the vsftpd_234_backdoor exploit module*  
 ![Fig 9](screenshots/Fig_9_vsftpd_2.3.4_exploit_module_selected_in_Metasploit.png)
+
 *Figure 9 : vsftpd 2.3.4 exploit module selected in Metasploit*  
 ![Fig 10](screenshots/Fig_10_Target_system_IP_address_configured_for_the_exploitation attempt.png)
+
 *Figure 10 : Target system IP address configured for the exploitation attempt*
 ![Fig 11](screenshots/Fig_11_Verification_of_exploit_parameters_before_execution.png)
+
 *Figure 11 : Verification of exploit parameters before execution*
 ![Fig 12](screenshots/Fig_12_Successful_exploitation_of_the_vsftpd_2.3.4_vulnerability.png)
+
 *Figure 12 : Successful exploitation: root shell obtained*
 
 **Outcome:** A root shell session was opened with no credentials. This confirms full system compromise is achievable by any attacker who can reach port 21.
@@ -200,6 +210,7 @@ nikto -h http://10.1.161.19
 **Outcome:** Confirmed End of Life software, insecure methods, missing headers, and information disclosure, all increasing the attack surface for future exploitation.
 
 ![Fig 13-15](screenshots/Fig13-15_Apache_HTTP_Server_Assessment.png)
+
 *Figure 13-15 : merge them horizontally*
 
 #### SMB & NFS Enumeration
@@ -214,6 +225,7 @@ showmount -e 192.168.x.x
 **Outcome:** Confirmed anonymous read/write access on SMB shares and unrestricted NFS export. No data was read or altered during testing.
 
 ![Fig 16-19](screenshots/Fig16-19_SMB_&_NFS_Enumeration.png)
+
 *Figure 16-19 : merge them*
 
 ### Phase 4 : Post-Exploitation
