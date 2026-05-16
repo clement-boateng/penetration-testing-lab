@@ -24,17 +24,17 @@ A structured penetration test simulating a real-world ethical hacking engagement
 
 ### Background
 
-This project simulates a penetration test against a segmented network environment modelled on a real-world scenario. The  organisation that had observed unusual activity across its network, unexpected traffic spikes during off-hours, failed login attempts on its email server, and unauthorised permission changes. The organisation required a controlled assessment to identify exploitable weaknesses before a real attacker could take advantage of them
+This project simulates a penetration test against a segmented network environment modelled on a real-world scenario. The  organisation had observed unusual activity across its network such as, unexpected traffic spikes during off-hours, failed login attempts on its email server, and unauthorised permission changes. The organisation required a controlled assessment to identify exploitable weaknesses before a real attacker could take advantage of them
 
-The target was a Linux server hosted in the organisation's **DMZ (Demilitarised Zone)** — the network segment exposed to external traffic while sitting behind the core internal network. This is a common and high-value target in real-world engagements.
+The target was a Linux server hosted in the organisation's **DMZ (Demilitarised Zone)**,  the network segment exposed to external traffic while sitting behind the core internal network. This is a common and high-value target in real-world engagements.
 
 ### Objective
 
 - Identify open ports and running services on the DMZ target
-- Discover exploitable vulnerabilities linked to specific software versions and misconfigurations
+- Discover exploitable vulnerabilities and misconfigurations
 - Validate confirmed vulnerabilities through controlled exploitation using Metasploit
-- Assess the potential impact of a successful attack (privilege level, data exposure)
-- Deliver actionable remediation recommendations prioritised by severity
+- Assess the potential impact of a successful attack 
+- Provide prioritised remediation actions based on severity
 
 The test was conducted following the **Penetration Testing Execution Standard (PTES)**, an industry-recognised framework covering seven structured phases from pre-engagement through to reporting.
 
@@ -48,7 +48,6 @@ The test was conducted following the **Penetration Testing Execution Standard (P
 | **Network Setup** | Isolated lab environment (attacker and target on the same subnet) |
 | **Methodology** | Penetration Testing Execution Standard (PTES) |
 
-### Tools Used
 
 | Tool | Purpose |
 |---|---|
@@ -61,12 +60,12 @@ The test was conducted following the **Penetration Testing Execution Standard (P
 
 ## Technical Skills Demonstrated
 
-- **Network Reconnaissance** : Host discovery and full TCP port scanning
+- **Network Reconnaissance** : Host discovery and TCP port scanning
 - **Service Enumeration** : Identifying software versions and exposed services
 - **Vulnerability Research** : Mapping detected software to known CVEs
 - **Exploit Development & Execution** : Using Metasploit to exploit CVE-2011-2523
 - **Web Application Assessment** : Misconfiguration testing with Nmap and Nikto
-- **File Share Enumeration** : SMB share and NFS export discovery via Nmap NSE
+- **File Share Enumeration** : SMB share and NFS export discovery through Nmap NSE
 - **Post-Exploitation Analysis** : Evaluating attacker impact at root privilege level
 - **Risk-Based Reporting** : Categorising findings by severity with remediation guidance
 - **Ethical & Scoped Testing** : Maintaining defined boundaries throughout the engagement
