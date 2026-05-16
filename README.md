@@ -179,16 +179,21 @@ run
 ![Fig 7](screenshots/Fig_7_Metasploit_Framework_launched.jpg)
 
 *Figure 7 : Metasploit launched* 
+
 ![Fig 8](screenshots/Fig_8_Metasploit_search_showing_the_vsftpd_234_backdoor_exploit_module.png)
 
 *Figure 8 : Metasploit search showing the vsftpd_234_backdoor exploit module*  
+
 ![Fig 9](screenshots/Fig_9_vsftpd_2.3.4_exploit_module_selected_in_Metasploit.png)
 
 *Figure 9 : vsftpd 2.3.4 exploit module selected in Metasploit*  
+
 ![Fig 10](screenshots/Fig_10_Target_system_IP_address_configured_for_the_exploitation attempt.png)
 
 *Figure 10 : Target system IP address configured for the exploitation attempt*
+
 ![Fig 11](screenshots/Fig_11_Verification_of_exploit_parameters_before_execution.png)
+
 
 *Figure 11 : Verification of exploit parameters before execution*
 ![Fig 12](screenshots/Fig_12_Successful_exploitation_of_the_vsftpd_2.3.4_vulnerability.png)
@@ -211,7 +216,7 @@ nikto -h http://10.1.161.19
 
 ![Fig 13-15](screenshots/Fig13-15_Apache_HTTP_Server_Assessment.png)
 
-*Figure 13-15 : merge them horizontally*
+*Figure 13-15 : Apache HTTP Server Assessment*
 
 #### SMB & NFS Enumeration
 
@@ -226,7 +231,7 @@ showmount -e 192.168.x.x
 
 ![Fig 16-19](screenshots/Fig16-19_SMB_&_NFS_Enumeration.png)
 
-*Figure 16-19 : merge them*
+*Figure 16-19 : SMB and NFSEnumeration*
 
 ### Phase 4 : Post-Exploitation
 
