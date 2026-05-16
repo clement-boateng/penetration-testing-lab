@@ -6,16 +6,16 @@ A structured penetration test simulating a real-world ethical hacking engagement
 
 ## Table of Contents
 
-1. [Introduction](#introduction--overview)
-2. [Environment and Tools](#environment--tools)
+1. [Introduction](#introduction-and-overview)
+2. [Environment and Tools](#environment-and-tools)
 3. [Technical Skills Demonstrated](#technical-skills-demonstrated)
 4. [Implementation Process](#implementation-process)
    - [Phase 1 : Reconnaissance](#phase-1--reconnaissance)  |   [Phase 2 : Vulnerability Analysis](#phase-2--vulnerability-analysis)  |   [Phase 3 : Exploitation](#phase-3--exploitation)  |  [Phase 4 : Post-Exploitation](#phase-4--post-exploitation)
 5. [Visual Evidence](#visual-evidence)
-6. [Results and Key Findings](#results--key-findings)
-7. [Installation and Setup](#installation--setup)
-8. [Challenges and Lessons Learned](#challenges--lessons-learned)
-9. [Conclusion](#conclusion--future-work)
+6. [Results and Key Findings](#results-and-key-findings)
+7. [Installation and Setup](#installation-and-setup)
+8. [Challenges and Lessons Learned](#challenges-and-lessons-learned)
+9. [Conclusion](#conclusion)
 
 
 
