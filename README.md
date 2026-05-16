@@ -93,6 +93,7 @@ nmap -sn 10.1.161.0/24
 ```
 
 ![Fig 2](screenshots/Fig_2_Host_discovery_confirming_target_is_online.png)
+
 *Figure 2 Host discovery confirming target is online*
 
 A full TCP SYN scan was run across all 65,535 ports to identify every open service on the target.
@@ -198,7 +199,7 @@ nikto -h http://10.1.161.19
 
 **Outcome:** Confirmed End of Life software, insecure methods, missing headers, and information disclosure, all increasing the attack surface for future exploitation.
 
-![Fig 13-15](screenshots/Fig13-15_Apache_HTTP Server_Assessment.png)
+![Fig 13-15](screenshots/Fig13-15_Apache_HTTP_Server_Assessment.png)
 *Figure 13-15 : merge them horizontally*
 
 #### SMB & NFS Enumeration
