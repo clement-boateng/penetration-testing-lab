@@ -82,7 +82,7 @@ The first step was confirming the attacker machine's own IP address to avoid sca
 ```bash
 ip a
 ```
-![Fig_1_Identifying the attacker's IP address](screenshots/Fig_1_Identifying the attacker's IP address.png)
+![Fig_1_Identifying the attacker's IP address](screenshot/Fig_1_Identifying the attacker's IP address.png)
 *Figure 1 : Identifying the attacker's IP address*
 
 Host discovery was then performed to confirm the target was live on the network.
