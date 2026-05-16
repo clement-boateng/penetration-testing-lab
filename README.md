@@ -78,7 +78,7 @@ The test was conducted following the **Penetration Testing Execution Standard (P
 
 **Goal:** Map the target's attack surface before attempting any exploitation.
 
-The first step was confirming the attacker machine's own IP address to avoid scanning the wrong host, a basic but critical step in any engagement.
+The first step was confirming the attacker machine's own IP address to avoid scanning the wrong host.
 
 ```bash
 ip a
@@ -89,7 +89,7 @@ ip a
 Host discovery was then performed to confirm the target was live on the network.
 
 ```bash
-nmap -sn 192.168.x.0/24
+nmap -sn 10.1.161.0/24
 ```
 
 *Figure 2 Host discovery confirming target is online*
@@ -97,18 +97,11 @@ nmap -sn 192.168.x.0/24
 A full TCP SYN scan was run across all 65,535 ports to identify every open service on the target.
 
 ```bash
-nmap -sS -p- 192.168.x.x
+nmap -sS -p- 10.1.161.19
 ```
 
 **Result:** 13 open TCP ports were discovered, including:
 
-| Port | Service |
-|---|---|
-| 21 | FTP (vsftpd) |
-| 22 | SSH (OpenSSH) |
-| 80 | HTTP (Apache) |
-| 139, 445 | SMB (Samba) |
-| 111, 2049 | RPC / NFS |
 
 *Figure 3  Full TCP port scan results*
 
@@ -121,7 +114,7 @@ nmap -sS -p- 192.168.x.x
 Service and version detection was run to understand exactly what software was running on each open port.
 
 ```bash
-nmap -sV 192.168.x.x
+nmap -sV -p 21,22, 80, 111, 139, 445, 445, 2049 , 3632 , 35890, 39125, 42774, 47856, 57296 10.1.161.19
 ```
 
 *Figure 4 Service and version detection output*
@@ -137,7 +130,7 @@ The FTP service on port 21 was running **vsftpd version 2.3.4**, a version known
 Confirmed with an Nmap NSE vulnerability script:
 
 ```bash
-nmap --script ftp-vsftpd-backdoor -p 21 192.168.x.x
+nmap -- script vuln 10.1.161.19
 ```
 
 *Figure 5 Nmap confirming the vsftpd 2.3.4 backdoor*
@@ -150,40 +143,13 @@ nmap --script ftp-vsftpd-backdoor -p 21 192.168.x.x
 
 The web server on port 80 was running **Apache 2.2.22**  a version that reached end-of-life in December 2017 and no longer receives security patches. Additional misconfigurations were identified:
 
-- **TRACE HTTP method enabled** : enables Cross-Site Tracing (XST) attacks
-- **Directory indexing exposed** : `/css/`, `/js/`, `/icons/` all browsable
-- **Missing security headers** : no `X-Frame-Options`, `Content-Security-Policy`, etc.
-- **Server version disclosed** : response headers reveal software and version to any requester
-
-```bash
-nmap --script http-methods,http-trace -p 80 192.168.x.x
-nikto -h http://192.168.x.x
-```
 
 *Figure 6  Nmap version detection showing Apache 2.2.22*  
-*Figure 14  Nmap HTTP scripts showing TRACE enabled and exposed directories*  
-*Figure 15  Nikto scan confirming EOL status and web misconfigurations*
-
 
 
 #### Exposed SMB and NFS Services (Medium)
 
-Ports 139, 445, and 2049 exposed SMB and NFS file-sharing services externally. These are protocols designed for use within trusted internal networks only.
-
-```bash
-nmap --script smb-enum-shares,smb-os-discovery -p 139,445 192.168.x.x
-nmap --script nfs-showmount -p 2049 192.168.x.x
-```
-
-Findings included:
-- SMB shares (`IPC$`, `print$`, `public`) enumerable with **anonymous access**
-- NFS `/files` directory exported to **all hosts** (`*`) with no access control
-
-*Figure 16  SMB enumeration showing anonymously accessible shares*  
-*Figure 17  SMB OS discovery revealing system information*  
-*Figure 18/19  NFS showmount confirming unrestricted /files export*
-
-
+Ports 139, 445, and 2049 exposed SMB and NFS file-sharing services externally.If these services are poorly configured or not protected, they may allow unauthorised users to access shared files, enumerate system information, or interact with internal resources.
 
 ### Phase 3  Exploitation
 
@@ -191,7 +157,7 @@ Findings included:
 
 #### Exploiting CVE-2011-2523 (vsftpd 2.3.4)
 
-Metasploit was used to exploit the vsftpd backdoor. This is a well-documented module that demonstrates how trivially this vulnerability can be weaponised.
+Metasploit was used to exploit the vsftpd backdoor. This module is widely documented and shows how easily this vulnerability can be exploited in practice.
 
 ```bash
 msfconsole
@@ -202,9 +168,11 @@ show options
 run
 ```
 
-*Figure 8 : Metasploit launched*  
-*Figure 9 : vsftpd_234_backdoor module selected*  
-*Figure 10/11 : Target configured and parameters verified*  
+*Figure 7 : Metasploit launched*  
+*Figure 8 : Metasploit search showing the vsftpd_234_backdoor exploit module*  
+*Figure 9 : vsftpd 2.3.4 exploit module selected in Metasploit*  
+*Figure 10 : Target system IP address configured for the exploitation attempt*
+*Figure 11 : Verification of exploit parameters before execution*
 *Figure 12 : Successful exploitation: root shell obtained*
 
 **Outcome:** A root shell session was opened with no credentials. This confirms full system compromise is achievable by any attacker who can reach port 21.
@@ -214,11 +182,14 @@ run
 Rather than attempting a full exploit (which was outside scope), the Apache assessment focused on validating dangerous misconfigurations:
 
 ```bash
-nmap --script http-methods -p 80 192.168.x.x 
-nikto -h http://192.168.x.x                  
+nmap -p 80 -- script http-vuln* 10.1.161.19
+nmap -p 80 -- script/http-methods, http-headers, http-enum 10.1.161.19
+nikto -h http://10.1.161.19                 
 ```
 
-**Outcome:** Confirmed EOL software, insecure methods, missing headers, and information disclosure — all increasing the attack surface for future exploitation.
+**Outcome:** Confirmed End of Life software, insecure methods, missing headers, and information disclosure, all increasing the attack surface for future exploitation.
+
+*Figure 13-15 : merge them horizontally*
 
 #### SMB & NFS Enumeration
 
@@ -231,7 +202,7 @@ showmount -e 192.168.x.x
 
 **Outcome:** Confirmed anonymous read/write access on SMB shares and unrestricted NFS export. No data was read or altered during testing.
 
-
+*Figure 16-19 : merge them*
 
 ### Phase 4 : Post-Exploitation
 
