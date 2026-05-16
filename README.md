@@ -239,9 +239,9 @@ No files were read, modified, or deleted during this phase. No persistence mecha
 | **SMB anonymous access** | Medium | Disable anonymous guest access (e.g., set `map to guest = Never` in Samba); restrict SMB traffic to internal, trusted network segments. |
 | **NFS wildcard export** | Medium | Restrict the NFS shares by replacing the `*` wildcard with specific, authorized IP addresses or subnets in `/etc/exports`. |
 | **Missing security headers** | Medium | Implement missing defense-in-depth headers (`X-Frame-Options`, `X-Content-Type-Options`, `Content-Security-Policy`, `Strict-Transport-Security`) via Apache configuration. |
-| **TRACE method enabled** | Low–Medium | Append or modify the directive `TraceEnable Off` in the global Apache configuration file to mitigate XST risks. |
-| **Directory indexing** | Low–Medium | Disable directory browsing globally or for specific directories by removing `Indexes` or explicitly setting `Options -Indexes` in Apache. |
-| **Unnecessary open ports** | Low–Medium | Conduct a port audit and implement strict firewall rules (iptables/UFW) to block inbound traffic on all non-essential ports. |
+| **TRACE method enabled** | Low – Medium | Append or modify the directive `TraceEnable Off` in the global Apache configuration file to mitigate XST risks. |
+| **Directory indexing** | Low – Medium | Disable directory browsing globally or for specific directories by removing `Indexes` or explicitly setting `Options -Indexes` in Apache. |
+| **Unnecessary open ports** | Low – Medium | Conduct a port audit and implement strict firewall rules (iptables/UFW) to block inbound traffic on all non-essential ports. |
 
 
 
@@ -257,41 +257,32 @@ To replicate this lab environment:
 
 ### Setup
 
-1. Import Metasploitable 2 into VirtualBox and set the network adapter to **Host-Only** mode
-2. Boot Kali Linux and confirm it is on the same Host-Only network
-3. Confirm connectivity with `ping <target-ip>`
-4. Run the commands documented in each phase section above
+1. Install VirtualBox or VMware
+2. Install Kali Linux and Metasploitable 2 and make sure they are on the same network
+3. Run the commands under each phase above
 
-**Legal Notice:** Only perform penetration testing against systems you own or have explicit written permission to test. Unauthorised access is a criminal offence under the Computer Misuse Act 1990 (UK) and equivalent legislation worldwide.
+**LEGAL NOTICE:** Only perform penetration testing on systems you own or have explicit written permission to test. Unauthorised access is a criminal offence under the Computer Misuse Act 1990 (UK) and equivalent legislation in other jurisdictions.
 
 
 
 ## Challenges and Lessons Learned
 
-### Knowing when to stop
+### Ethical Boundaries in Penetration Testing
 
-One of the hardest professional judgments in an engagement is recognising when to stop. Gaining root shell access could have led to reading files, creating accounts, or deploying persistence. Choosing not to do any of that — and being able to explain why — is itself a core professional skill. Restraint is not a limitation; it is part of ethical practice.
+Knowing when to stop is one of the most important decisions in a security engagement. Even if full system access is achieved, the tester must avoid going beyond what is necessary for the scope of the assessment. Actions like accessing sensitive data, creating accounts, or maintaining access are not required for proving the vulnerability. The key skill is recognising that enough evidence has been gathered and stopping there, while being able to justify that decision clearly as part of ethical and professional practice..
 
 ### False positive management
 
 During vulnerability scanning, not every flagged issue is exploitable. Manually verifying each finding before carrying it forward reduced noise and ensured only genuine risks reached the report. This is especially important when communicating with non-technical stakeholders who rely on the report to prioritise remediation.
 
-### Communicating risk clearly
 
-Translating technical findings (e.g. "TRACE method enabled") into business-level impact (e.g. "an attacker could steal authenticated session credentials via a cross-site tracing attack") is a skill that takes deliberate practice. This project reinforced the importance of writing findings that are useful to both engineers and decision-makers.
+## Conclusion
 
-
-
-## Conclusion and Future Work
-
-This project demonstrated the full penetration testing lifecycle — from reconnaissance through to risk-ranked reporting — against a purposefully vulnerable target. Three vulnerabilities were identified across FTP, HTTP, and file-sharing services, one of which was confirmed exploitable to root access via Metasploit.
+This project demonstrated the full penetration testing lifecycle, from reconnaissance through to risk-ranked reporting against a purposefully vulnerable target. Three vulnerabilities were identified across FTP, HTTP, and file-sharing services, one of which was confirmed exploitable to root access through Metasploit.
 
 **Potential future extensions to this project:**
 
 - Automate the scanning and reporting pipeline using a Python script
-- Expand the scope to include the full Metasploitable 2 attack surface (e.g. Samba ms08-067, PostgreSQL, IRC)
-- Integrate a CVSS scoring model into the findings table
-- Add a custom Nmap NSE script to demonstrate scripting capability
 
 
 ---
