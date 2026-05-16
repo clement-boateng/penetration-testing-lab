@@ -188,7 +188,7 @@ run
 
 *Figure 9 : vsftpd 2.3.4 exploit module selected in Metasploit*  
 
-![Fig 10](screenshots/Fig_10_Target_system_IP_address_configured_for_the_exploitation attempt.png)
+![Fig 10](screenshots/Fig_10_Target_system_IP_address_configured_for_the_exploitation_attempt.png)
 
 *Figure 10 : Target system IP address configured for the exploitation attempt*
 
@@ -231,7 +231,7 @@ showmount -e 192.168.x.x
 
 ![Fig 16-19](screenshots/Fig16-19_SMB_&_NFS_Enumeration.png)
 
-*Figure 16-19 : SMB and NFSEnumeration*
+*Figure 16-19 : SMB and NFSE numeration*
 
 ### Phase 4 : Post-Exploitation
 
