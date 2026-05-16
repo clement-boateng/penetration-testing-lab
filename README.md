@@ -206,42 +206,13 @@ showmount -e 192.168.x.x
 
 ### Phase 4 : Post-Exploitation
 
-**Goal:** Understand the real-world impact of the compromise.
+Goal: The goal of this phase was to assess the real-world impact of a successful compromise.
 
-With root shell access obtained via vsftpd, the attacker's position was assessed:
+Once root shell access was obtained via the vsftpd backdoor, the focus shifted from getting in to understanding what an attacker could do from here.
+Root is the highest privilege level on a Linux system, there is no further escalation needed. An attacker would have complete control over the machine; they can read, modify, or delete files, create or remove user accounts, and more.
+Beyond the target itself, root access also opens the door to lateral movement. An attacker could quietly deploy a hidden backdoor service, modify startup scripts to survive a reboot, or create a new privileged account, all without triggering any alerts.
+No files were read, modified, or deleted during this phase. No persistence mechanisms were deployed. Testing remained within the defined scope throughout.
 
-- **Privilege level:** Root (no escalation needed)
-- **Potential impact:** Full file system access (read, write, delete), ability to add or remove user accounts, install services or backdoors, disable logging, and pivot deeper into the network
-- **Persistence potential:** At root level, an attacker could deploy a hidden backdoor service, modify startup scripts, or create a new privileged account, all without detection
-
-No persistence mechanisms were deployed. No files were read, modified, or deleted. The post-exploitation phase was deliberately limited to analysis only, in line with the defined scope and ethical testing principles.
-
-
-
-## Visual Evidence
-
-Screenshots should be placed in a `/screenshots` directory in this repository and referenced inline where marked above.
-
-```
-screenshots/
-├── figure-01-attacker-ip.png
-├── figure-02-host-discovery.png
-├── figure-03-port-scan.png
-├── figure-04-service-version.png
-├── figure-05-vsftpd-confirmed.png
-├── figure-06-apache-version.png
-├── figure-08-metasploit-launch.png
-├── figure-09-module-selected.png
-├── figure-10-target-configured.png
-├── figure-11-params-verified.png
-├── figure-12-root-shell.png
-├── figure-14-http-trace-dirs.png
-├── figure-15-nikto-results.png
-├── figure-16-smb-shares.png
-├── figure-17-smb-os.png
-├── figure-18-nfs-port.png
-└── figure-19-nfs-export.png
-```
 
 
 
