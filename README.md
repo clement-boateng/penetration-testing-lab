@@ -104,7 +104,7 @@ nmap -sS -p- 10.1.161.19
 
 **Result:** 13 open TCP ports were discovered, including:
 
-![Fig 3](screenshots/Fig_3_Full_TCP_port scan_results.png)
+![Fig 3](screenshots/Fig_3_Full_TCP_port_scan_results.png)
 
 *Figure 3  Full TCP port scan results*
 
