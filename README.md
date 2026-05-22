@@ -217,7 +217,7 @@ nikto -h http://10.1.161.19
 
 ![Fig 13-15](screenshots/Fig13-15_Apache_HTTP_Server_Assessment.png)
 
-*Figure 13-15 : Apache HTTP Server Assessment*
+*Figure 13 : Apache HTTP Server Assessment*
 
 #### SMB & NFS Enumeration
 
@@ -232,7 +232,7 @@ showmount -e 192.168.x.x
 
 ![Fig 16-19](screenshots/Fig16-19_SMB_&_NFS_Enumeration.png)
 
-*Figure 16-19 : SMB and NFSE numeration*
+*Figure 14 : SMB and NFSE numeration*
 
 ### Phase 4 : Post-Exploitation
 
